@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f8f9;
+}
+
+
+.sidebar {
+    position: fixed;
+    width: 180px;
+    height: 100vh;
+    background-color: #2f8f9d;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+
+.header {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #2f8f9d;
+}
+
+.para {
+    color: gray;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+
+.updates {
+    width: 35%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.update-card {
+    background-color: #e8f6f8;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.cards {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #3baea0;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.table-section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.iframe-section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+iframe {
+    align-content: center;
+
+    width: 80%;
+    height: 500px;
+    border: 12px solid #2f8f9d;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 50px;
+    margin:auto;
+    
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
