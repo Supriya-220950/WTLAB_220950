@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Care Dashboard</title>
+    <link rel="stylesheet" href="smartcare.css">
+</head>
+<body>
+    <h2>registration form</h2>
+    <form method="post">
+        name:<input type="text" name="name" required><br><br>
+        username:<input type="text" name="username" required><br><br>
+        Password:<input type="password" name="password" required><br><br>     
+        confirm password :<input type="text" name="cpassword" required><br><br>
+        <input type="submit" name="submit" value="Register" required><br><br>
+        
+    </form>
+    <hr> 
+    <?php
+
+    if(isset($_POST['submit'])){
+        $name=$_POST['name'];
+        $username=$_POST['username'];
+        $password=$_POST['password'];
+        $cpassword=$_POST['cpassword'];
+//---triiming----------
+        $name=trim[$name];
+        $username=trim[$username];
+//----------------------------security--------
+$name=htmlspecialchars($name);
+$username=htmlspecialchars($username);
+$password=addslashes($password);
+//--format---
+$name=ucwords(strtolower($name));
+$name=strtolower($username);
+//-----------------------VALIDATION------------------
+if(strlen($username) < 3){
+    die("user name must be atleast 3 charecters long")
+
+}
+if(str_word_count($name)<1){die("name should be atleast one word")}
+    }
+
+if(strlen($password)<6){
+    die("password must be atleat 6 charecters")
+}
+if
+    
+    
+    
+    
+    ?>
+
+
+<div class="sidebar">
+    <h2>Smart<br>Care</h2>
+    <a href="#">HOME</a>
+    <a href="#">DOCTOR</a>
+    <a href="#">APPOINTMENT</a>
+    <a href="#">ANALYSIS</a>
+    <a href="#">SETTINGS</a>
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>Smart Care Dashboard</h1>
+        <p class="para" id="date"></p>
+    </div>
+
+    <div class="content">
+
+        <div class="updates">
+            <h3>Latest Health Updates</h3>
+
+            <div class="update-card">
+                <h4>Appointment Reminder</h4>
+                <p>Your cardiology appointment is scheduled for tomorrow.</p>
+            </div>
+
+            <div class="update-card">
+                <h4>Lab Report Available</h4>
+                <p>Blood test results are now available.</p>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Patient Records</h3>
+                <p>View & manage patient details</p>
+                <button id="patients">More Details</button>
+            </div>
+
+            <div class="card">
+                <h3>Appointments</h3>
+                <p>Check upcoming schedules</p>
+                <button id="appointments">More Details</button>
+            </div>
+
+            <div class="card">
+                <h3>Health Analytics</h3>
+                <p>Monitor health statistics</p>
+                <button id="analytics">More Details</button>
+            </div>
+
+            <div class="card">
+                <h3>Medical Reports</h3>
+                <p>Access diagnostic reports</p>
+                <button id="reports"> More Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h3>Patient Appointments</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Category</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Raghav</td>
+                    <td>21</td>
+                    <td>Cardiology</td>
+                    <td>45576554374</td>
+                </tr>
+                <tr>
+                    <td>Ram</td>
+                    <td>28</td>
+                    <td>Neurology</td>
+                    <td>455374565456</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="iframe-section">
+        <h3>Health Reports & External View</h3>
+
+        <iframe src="https://www.who.int" title="WHO Health"></iframe>
+
+        <iframe src="https://www.wikipedia.org" title="Medical Info"></iframe>
+    </div>
+
+</div><div class="iframe-section">
+    <h3>Dashboard Details</h3>
+    <iframe id="detailsFrame"></iframe>
+</div>
+<!
+<script>
+    let a = "supriya";
+    console.log(a);
+
+    function goodmorning() {
+        let a = "jamuna";
+        let b = "vani";
+        console.log(a);
+    }
+
+    let s;
+    let n = null;
+    let u = NaN;
+
+    console.log(typeof s);
+    console.log(typeof n);
+    console.log(typeof u);
+
+    alert("check your vitals regularly")
+    
+    var y=prompt("enter rating of your health and how well you are feeling these days out of 10")
+    if (y<5){
+        alert("please consult a doctor immidieatly")
+    }
+    if (y>8){
+        alert("your doing well keep it up" )
+    }
+
+    const today = new Date();
+    document.getElementById("date").innerText = today.toDateString();
+    
+    
+    document.getElementById("patients")
+        .addEventListener("click", function () {
+            document.getElementById("detailsFrame").src="patient.png";
+        });
+
+    document.getElementById("appointments")
+        .addEventListener("click", function () {
+            document.getElementById("detailsFrame").src="appointment.png";
+        });
+
+    document.getElementById("analytics")
+        .addEventListener("click", function () {
+            document.getElementById("detailsFrame").src="analysis.png";
+        });
+
+    document.getElementById("reports")
+        .addEventListener("click", function () {
+            document.getElementById("detailsFrame").src = "report.png";
+        });
+</script>
+>
+
+
+
+</body>
+</html>
