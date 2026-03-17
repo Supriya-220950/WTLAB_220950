@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors + Effects Demo</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js" type="module"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            transition: 0.5s;
+        }
+
+        .text {
+            margin: 5px;
+        }
+
+        #box {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 id="title">jQuery Selectors</h1>
+
+<p class="text">first text</p>
+<p class="text">second text</p>
+<p class="text">third text</p>
+<p class="text special">4th text</p>
+
+
+<div id="box">
+    <dotlottie-wc
+        src="https://lottie.host/1554b7ba-45d9-46e2-9187-69a0c9a16c0a/Z2OXkGRa79.lottie"
+        stateMachineId="StateMachine1"
+        style="width:300px;height:300px">
+    </dotlottie-wc>
+</div>
+
+<br><br>
+
+
+<button id="styleText">Style Text</button>
+<button id="fadeIn">Fade In Animation</button>
+<button id="fadeOut">Fade Out Animation</button>
+<button id="slide">Slide Animation</button>
+<button id="toggle">Toggle Animation</button>
+<button id="zoomIn">Zoom In</button>
+<button id="zoomOut">Zoom Out</button>
+<button id="move">Move buttons</button>
+<button id="reset">Reset</button>
+
+<script>
+$(function(){
+
+    //  text styling
+    function styleText(){
+        $("p").css("color","blue");
+        $("#title").css("color","red");
+        $(".special").css("font-weight","bold");
+        $("h1,p").css("border","1px solid gray");
+
+        $("body p").css("background","#f9f9f9");
+        $("body > h1").css("background","#ddd");
+
+        $(".text + p").css("background","lightyellow");
+        $(".text ~ p").css("font-style","italic");
+
+        $("p:first").css("font-size","22px");
+        $("p:last").css("color","green");
+        $("p:eq(2)").css("background","lightblue");
+        $("p:even").css("opacity","0.7");
+        $("p:odd").css("opacity","1");
+        $("p:not(.special)").css("text-decoration","underline");
+    }
+
+    //  TEXT STYLING
+    $("#styleText").click(function(){
+        styleText();
+    });
+
+    //  FADE
+    $("#fadeIn").click(function(){
+        $("#box").fadeIn();
+    });
+
+    $("#fadeOut").click(function(){
+        $("#box").fadeOut();
+    });
+
+    // SLIDE 
+    $("#move").click(function(){
+        $("#box").slideUp(400).slideDown(400);
+    });
+
+    // TOGGLE
+    $("#toggle").click(function(){
+        $("#box").toggle();
+    });
+
+    //  ZOOM IN
+    $("#zoomIn").click(function(){
+        $("#box").animate({
+            width: "400px",
+            height: "400px"
+        }, 500);
+    });
+
+    // ZOOM OUT
+    $("#zoomOut").click(function(){
+        $("#box").animate({
+            width: "300px",
+            height: "300px"
+        }, 500);
+    });
+
+    // MOVE
+    $("#slide").click(function(){
+        $("#box").animate({marginLeft:"150px"},800)
+                 .animate({marginLeft:"0px"},800);
+    });
+
+    //  RESET
+    $("#reset").click(function(){
+        location.reload();
+    });
+
+    // ✨ TEXT HOVER EFFECT
+    $("#title").hover(function(){
+        $(this).css({transform:"scale(1.2)", color:"purple"});
+    }, function(){
+        $(this).css({transform:"scale(1)", color:"black"});
+    });
+
+});
+</script>
+
+</body>
+</html>
