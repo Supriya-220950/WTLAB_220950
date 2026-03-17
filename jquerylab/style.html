@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Style</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.red { color:red; }
+</style>
+</head>
+
+<body>
+
+<h2 id="text">Style Demo</h2>
+
+<button id="css">Change CSS</button>
+<button id="add">Add Class</button>
+<button id="remove">Remove Class</button>
+<button id="toggle">Toggle Class</button>
+
+<script>
+$("#css").click(()=> $("#text").css("font-size","30px"));
+$("#add").click(()=> $("#text").addClass("red"));
+$("#remove").click(()=> $("#text").removeClass("red"));
+$("#toggle").click(()=> $("#text").toggleClass("red"));
+</script>
+
+</body>
+</html>
