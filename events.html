@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<h2>Events Demo</h2>
+
+<button id="click">Click</button>
+<button id="dbl">Double Click</button>
+
+<input id="input" placeholder="Type here">
+
+<p id="text">Hover me</p>
+
+<script>
+$("#click").click(()=> alert("Clicked"));
+$("#dbl").dblclick(()=> alert("Double Clicked"));
+
+$("#input").keydown(()=> console.log("Key pressed"));
+
+$("#text").mouseenter(()=> $("#text").css("color","red"));
+$("#text").mouseleave(()=> $("#text").css("color","black"));
+</script>
+
+</body>
+</html>
