@@ -1,79 +1,156 @@
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Smart Care Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Care - Healthcare Dashboard</title>
     <link rel="stylesheet" href="smartcare.css">
 </head>
 <body>
-
-
-<div class="sidebar">
-    <h2 >Smart<br>Care</h2>
-    <a href="#">HOME</a>
-    <a href="#">DOCTER</a>
-    <a href="#">APPOINTMENT</a>
-    <a href="#">ANLYSIS</a>
-    <a href="#">SETTINGS</a>
-</div>
-
-
-<div class="main">
-
-
-    <div class="header">
-        <div>
-            <h1  >Smart Care Dashboard</h1>
-            <p class="para">16 December 2025</p>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Smart<br>Care</h2>
+            <p class="tagline">Your Health Partner</p>
         </div>
+        <nav class="sidebar-nav">
+            <a href="#home" class="nav-link active">🏠 HOME</a>
+            <a href="#doctors" class="nav-link">👨‍⚕️ DOCTORS</a>
+            <a href="#appointments" class="nav-link">📅 APPOINTMENTS</a>
+            <a href="#analysis" class="nav-link">📊 ANALYSIS</a>
+            <a href="#records" class="nav-link">📋 RECORDS</a>
+            <a href="#settings" class="nav-link">⚙️ SETTINGS</a>
+        </nav>
     </div>
 
-    <div class="content">
-
-
-        <div class="updates">
-            <h3>Latest Health Updates</h3>
-            <div class="update-card">
-                <h4>Appointment Reminder</h4>
-                <p>Your cardiology appointment is scheduled for tomorrow.</p>
-            </div>
-            <div class="update-card">
-                <h4>Lab Report Available</h4>
-                <p>Blood test results are now available for download.</p>
-            </div>
-        </div>
-
-       
-        <div class="cards">
-            <div class="card">
-                <h3>Patient Records</h3>
-                <p>View & manage patient details</p>
-                <button>More Details</button>
-            </div>
-
-            <div class="card">
-                <h3>Appointments</h3>
-                <p>Check upcoming schedules</p>
-                <button>More Details</button>
-            </div>
-
-            <div class="card">
-                <h3>Health Analytics</h3>
-                <p>Monitor health statistics</p>
-                <button>More Details</button>
-            </div>
-
-            <div class="card">
-                <h3>Medical Reports</h3>
-                <p>Access diagnostic reports</p>
-                <button>More Details</button>
+    <!-- Main Content Area -->
+    <div class="main">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="header-content">
+                <div>
+                    <h1>Smart Care Dashboard</h1>
+                    <p class="date-display" id="currentDate">Loading...</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="avatar">
+                    <div class="user-info">
+                        <p class="user-name">Dr. John Smith</p>
+                        <p class="user-role">Healthcare Provider</p>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Updates Section -->
+            <div class="updates-section">
+                <div class="section-title">
+                    <h3>📢 Latest Health Updates</h3>
+                </div>
+                <div class="updates">
+                    <div class="update-card">
+                        <div class="update-icon">📌</div>
+                        <div class="update-content">
+                            <h4>Appointment Reminder</h4>
+                            <p>Your cardiology appointment is scheduled for tomorrow at 2:00 PM.</p>
+                            <small>December 17, 2025</small>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-icon">📄</div>
+                        <div class="update-content">
+                            <h4>Lab Report Available</h4>
+                            <p>Blood test results are now available for download. All values are normal.</p>
+                            <small>December 16, 2025</small>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-icon">⚠️</div>
+                        <div class="update-content">
+                            <h4>Medication Refill</h4>
+                            <p>Your prescription for Metformin needs refilling. Contact your pharmacy.</p>
+                            <small>December 15, 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="cards-section">
+                <div class="section-title">
+                    <h3>📊 Quick Access</h3>
+                </div>
+                <div class="cards">
+                    <div class="card card-primary">
+                        <div class="card-icon">👥</div>
+                        <h3>Patient Records</h3>
+                        <p>View & manage patient details</p>
+                        <div class="card-meta">450 Active Patients</div>
+                        <button class="btn btn-primary">More Details</button>
+                    </div>
+
+                    <div class="card card-secondary">
+                        <div class="card-icon">📅</div>
+                        <h3>Appointments</h3>
+                        <p>Check upcoming schedules</p>
+                        <div class="card-meta">12 Scheduled Today</div>
+                        <button class="btn btn-secondary">More Details</button>
+                    </div>
+
+                    <div class="card card-success">
+                        <div class="card-icon">📈</div>
+                        <h3>Health Analytics</h3>
+                        <p>Monitor health statistics</p>
+                        <div class="card-meta">95% Improvement</div>
+                        <button class="btn btn-success">More Details</button>
+                    </div>
+
+                    <div class="card card-info">
+                        <div class="card-icon">📋</div>
+                        <h3>Medical Reports</h3>
+                        <p>Access diagnostic reports</p>
+                        <div class="card-meta">156 Reports Available</div>
+                        <button class="btn btn-info">More Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <div class="section-title">
+                    <h3>📊 Key Statistics</h3>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>Total Patients</h4>
+                        <p class="stat-number">450</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Active Cases</h4>
+                        <p class="stat-number">78</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Appointments</h4>
+                        <p class="stat-number">12</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Reports Pending</h4>
+                        <p class="stat-number">23</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Smart Care Healthcare System. All rights reserved.</p>
+        </footer>
     </div>
-</div>
 
+    <script src="script.js"></script>
 </body>
 </html>
 

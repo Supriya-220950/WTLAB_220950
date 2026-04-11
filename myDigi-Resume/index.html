@@ -1,53 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supriya | Digital Resume</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Digital Resume | Expert Developer</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body data-bs-theme="light">
 
-<body>
+    <!-- Navigation Sidebar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="width: 80px; height: 100vh; flex-direction: column; padding: 20px 10px;">
+        <div class="vertical-menu">
+            <a href="#" class="nav-link text-white mb-3 menu-link active" data-target="home" title="Home">🏠</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="about" title="About">👤</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="skills" title="Skills">⚡</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="experience" title="Experience">💼</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="projects" title="Projects">📁</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="education" title="Education">🎓</a>
+            <a href="#" class="nav-link text-white mb-3 menu-link" data-target="contact" title="Contact">📞</a>
+        </div>
+    </nav>
 
-<div class="d-flex">
+    <!-- Main Content -->
+    <main style="margin-left: 80px;">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="content-section py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-3">Hi, I'm Supriya Akula</h1>
+                        <p class="lead text-muted mb-4">Full-Stack Developer | Data Science Enthusiast | Web Designer</p>
+                        <p class="fs-5 mb-4">Passionate about building beautiful, functional web applications and exploring data-driven solutions.</p>
+                        <div class="btn-group"> 
+                            <a href="#about" class="btn btn-primary btn-lg me-2">Learn More</a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="card shadow-lg">
+                            <img src="https://via.placeholder.com/300" alt="Profile" class="card-img-top rounded-circle p-3" style="max-width: 250px; margin: 20px auto;">
+                            <div class="card-body">
+                                <p class="card-text">Welcome to my digital portfolio!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- ===== SIDEBAR ===== -->
-<div class="sidebar p-3 text-white">
-    <h4 class="text-center">My Resume</h4>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="content-section py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">About Me</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="fs-5 mb-3">
+                            I am a passionate developer with expertise in full-stack web development, data analysis, and machine learning. 
+                            With a strong foundation in computer science, I thrive on creating innovative solutions to complex problems.
+                        </p>
+                        <p class="fs-5 mb-3">
+                            My journey began with a fascination for programming, which evolved into a comprehensive skill set spanning frontend and backend technologies. 
+                            I believe in writing clean, maintainable code and continuously learning new technologies.
+                        </p>
+                        <h4 class="mb-3">Core Competencies</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success"></i> Full-Stack Development</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Data Analysis & Visualization</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Database Design</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> API Development</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success"></i> UI/UX Design</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Project Management</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Cloud Deployment</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Agile Methodology</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Quick Facts</h5>
+                                <p class="card-text">
+                                    <strong>Experience:</strong> 3+ Years<br>
+                                    <strong>Projects:</strong> 50+<br>
+                                    <strong>Clients:</strong> 20+<br>
+                                    <strong>Languages:</strong> 8+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <ul class="nav flex-column mt-4">
-        <li><a href="#" class="nav-link menu-link active" data-target="home">🏠 Home</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="about">👤 About</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="skills">⚡ Skills</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="projects">📁 Projects</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="education">🎓 Education</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="gallery">🖼 Gallery</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="extra">➕ More</a></li>
-        <li><a href="#" class="nav-link menu-link" data-target="contact">📞 Contact</a></li>
-    </ul>
-</div>
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="content-section py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">Technical Skills</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5>Frontend Development</h5>
+                        <div class="mb-2">
+                            <span class="badge bg-primary">HTML5</span>
+                            <span class="badge bg-primary">CSS3</span>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-primary">React</span>
+                            <span class="badge bg-primary">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Backend Development</h5>
+                        <div class="mb-2">
+                            <span class="badge bg-success">PHP</span>
+                            <span class="badge bg-success">Node.js</span>
+                            <span class="badge bg-success">Python</span>
+                            <span class="badge bg-success">REST API</span>
+                            <span class="badge bg-success">GraphQL</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Databases</h5>
+                        <div class="mb-2">
+                            <span class="badge bg-warning">MySQL</span>
+                            <span class="badge bg-warning">MongoDB</span>
+                            <span class="badge bg-warning">PostgreSQL</span>
+                            <span class="badge bg-warning">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Tools & Platforms</h5>
+                        <div class="mb-2">
+                            <span class="badge bg-danger">Git</span>
+                            <span class="badge bg-danger">Docker</span>
+                            <span class="badge bg-danger">AWS</span>
+                            <span class="badge bg-danger">Linux</span>
+                            <span class="badge bg-danger">VSCode</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- ===== CONTENT ===== -->
-<div class="content p-4 flex-grow-1">
+                <h4 class="mt-4 mb-3">Skill Proficiency</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <p class="mb-1">JavaScript <span class="float-end">90%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <p class="mb-1">PHP <span class="float-end">85%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <p class="mb-1">React <span class="float-end">80%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <p class="mb-1">Database Design <span class="float-end">88%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- HOME -->
-<div id="home" class="content-section">
-    <h1>Hi, I'm Supriya 👋</h1>
-    <p class="lead">Aspiring Data Scientist</p>
-    <button class="btn btn-primary" onclick="window.location.href='SUPRIYARESUME.pdf'">Download Resume</button>
-</div>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="content-section py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">Experience</h2>
+                <div class="timeline">
+                    <div class="row mb-4">
+                        <div class="col-md-3"><strong>2024 - Present</strong></div>
+                        <div class="col-md-9">
+                            <h5>Senior Full-Stack Developer</h5>
+                            <p class="text-muted">Tech Solutions Inc.</p>
+                            <p>Leading development of enterprise applications, mentoring junior developers, and architecting scalable solutions.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-4">
+                        <div class="col-md-3"><strong>2022 - 2024</strong></div>
+                        <div class="col-md-9">
+                            <h5>Full-Stack Developer</h5>
+                            <p class="text-muted">Digital Innovations Ltd.</p>
+                            <p>Developed responsive web applications, managed databases, and collaborated with design teams on UX improvements.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-4">
+                        <div class="col-md-3"><strong>2021 - 2022</strong></div>
+                        <div class="col-md-9">
+                            <h5>Junior Developer</h5>
+                            <p class="text-muted">Web Creations</p>
+                            <p>Built frontend components, fixed bugs, and participated in code reviews to maintain code quality standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- ABOUT -->
-<div id="about" class="content-section d-none">
-    <div class="row">
-        <div class="col-md-6">
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="content-section py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">Featured Projects</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="SmartCare">
+                            <div class="card-body">
+                                <h5 class="card-title">SmartCare Healthcare</h5>
+                                <p class="card-text">Full-stack healthcare management system with patient records, appointments, and file management.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-primary">PHP</span>
+                                    <span class="badge bg-primary">MySQL</span>
+                                    <span class="badge bg-primary">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="E-Commerce">
+                            <div class="card-body">
+                                <h5 class="card-title">E-Commerce Platform</h5>
+                                <p class="card-text">Modern online store with product catalog, shopping cart, and secure payment integration.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-success">React</span>
+                                    <span class="badge bg-success">Node.js</span>
+                                    <span class="badge bg-success">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Data Dashboard">
+                            <div class="card-body">
+                                <h5 class="card-title">Analytics Dashboard</h5>
+                                <p class="card-text">Real-time data visualization dashboard with advanced filtering and chart generation.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-warning">Python</span>
+                                    <span class="badge bg-warning">D3.js</span>
+                                    <span class="badge bg-warning">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="content-section py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">Education</h2>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Bachelor of Technology in Computer Science</h5>
+                                <p class="card-text text-muted">University of Technology • 2019-2023</p>
+                                <p>GPA: 3.8/4.0 | Honors: Cum Laude</p>
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Professional Certifications</h5>
+                                <ul>
+                                    <li><strong>AWS Certified Associate Developer</strong> - 2023</li>
+                                    <li><strong>Google Cloud Professional Data Engineer</strong> - 2023</li>
+                                    <li><strong>Full-Stack Web Development Bootcamp</strong> - 2023</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="content-section py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">Get In Touch</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Contact Information</h5>
+                        <p><i class="bi bi-envelope"></i> <strong>Email:</strong> supriya@example.com</p>
+                        <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> +91 9876543210</p>
+                        <p><i class="bi bi-geo-alt"></i> <strong>Location:</strong> Mumbai, India</p>
+                        <div class="mt-3">
+                            <h5>Follow Me</h5>
+                            <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>
+                            <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-twitter"></i> Twitter</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Send Me a Message</h5>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+            <p>&copy; 2025 Supriya Akula. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
             <img src="images/profile.jpeg" class="img-fluid rounded">
         </div>
         <div class="col-md-6">

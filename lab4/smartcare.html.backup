@@ -7,51 +7,6 @@
     <link rel="stylesheet" href="smartcare.css">
 </head>
 <body>
-    <h2>registration form</h2>
-    <form method="post">
-        name:<input type="text" name="name" required><br><br>
-        username:<input type="text" name="username" required><br><br>
-        Password:<input type="password" name="password" required><br><br>     
-        confirm password :<input type="text" name="cpassword" required><br><br>
-        <input type="submit" name="submit" value="Register" required><br><br>
-        
-    </form>
-    <hr> 
-    <?php
-
-    if(isset($_POST['submit'])){
-        $name=$_POST['name'];
-        $username=$_POST['username'];
-        $password=$_POST['password'];
-        $cpassword=$_POST['cpassword'];
-//---triiming----------
-        $name=trim[$name];
-        $username=trim[$username];
-//----------------------------security--------
-$name=htmlspecialchars($name);
-$username=htmlspecialchars($username);
-$password=addslashes($password);
-//--format---
-$name=ucwords(strtolower($name));
-$name=strtolower($username);
-//-----------------------VALIDATION------------------
-if(strlen($username) < 3){
-    die("user name must be atleast 3 charecters long")
-
-}
-if(str_word_count($name)<1){die("name should be atleast one word")}
-    }
-
-if(strlen($password)<6){
-    die("password must be atleat 6 charecters")
-}
-if
-    
-    
-    
-    
-    ?>
-
 
 <div class="sidebar">
     <h2>Smart<br>Care</h2>
@@ -152,7 +107,7 @@ if
     <h3>Dashboard Details</h3>
     <iframe id="detailsFrame"></iframe>
 </div>
-<!
+
 <script>
     let a = "supriya";
     console.log(a);
@@ -205,7 +160,6 @@ if
             document.getElementById("detailsFrame").src = "report.png";
         });
 </script>
->
 
 
 

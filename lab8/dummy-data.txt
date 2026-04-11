@@ -1,0 +1,4 @@
+Here is some dummy medical data:
+Patient: Dr. John Doe
+Heart Rate: 72 bpm
+Blood Pressure: 120/80 mmHg

@@ -18,6 +18,20 @@ $styledUserName = ucwords(strtolower(trim($rawUserName)));
 
 $rawSystemName = "smart_care_advanced_portal";
 $styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
+
+// 3. Lab 6: File Upload Feature
+$uploadMsg = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['lab_report'])) {
+    $file = $_FILES['lab_report'];
+    if ($file['error'] === 0) {
+        $dest = __DIR__ . '/' . time() . '_' . basename($file['name']);
+        if (move_uploaded_file($file['tmp_name'], $dest)) {
+            $uploadMsg = "<p style='color:green; padding:10px; background:#e6ffe6; border-radius:5px;'>File Uploaded Successfully: " . htmlspecialchars($file['name']) . "</p>";
+        } else {
+            $uploadMsg = "<p style='color:red;'>Failed to move file.</p>";
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -182,11 +196,30 @@ $styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
                 <div id="appointmentList"></div>
             </div>
 
-            <!-- Reports Section -->
+            <!-- Reports Section (Modified for Lab 6) -->
             <div class="content-section" id="reportsSection" style="display:none;">
-                <h3>📋 Medical Reports (JavaScript Enhanced)</h3>
-                <button id="generateReport">Generate Health Report</button>
-                <div id="reportOutput"></div>
+                <h3>📋 Medical Reports & Files (Lab 6)</h3>
+                
+                <?php echo $uploadMsg; ?>
+
+                <div class="appointment-form" style="margin-top:20px;">
+                    <h4>Upload New Medical Report</h4>
+                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="lab_report" required style="margin-bottom:10px;">
+                        <button type="submit" class="btn-card">Upload File</button>
+                    </form>
+                </div>
+
+                <div class="appointment-form" style="margin-top:20px;">
+                    <h4>Reference Data</h4>
+                    <p>Dummy data file for reference operations:</p>
+                    <a href="download.php" style="display:inline-block; margin-top:10px; padding:10px 15px; background:#3baea0; color:#fff; text-decoration:none; border-radius:5px;">Download dummy-data.txt</a>
+                </div>
+
+                <div style="margin-top:30px;">
+                    <button id="generateReport">Generate Health Report</button>
+                    <div id="reportOutput"></div>
+                </div>
             </div>
         </div>
 

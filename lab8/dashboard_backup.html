@@ -1,24 +1,3 @@
-<?php
-// Lab 5: PHP Variables Scope & String Functions
-
-// 1. PHP Variable Scope
-$globalPatientCount = 150; // Global Variable
-
-function calculateTotalPatients() {
-    global $globalPatientCount;
-    $localNewPatients = 12; // Local Variable
-    return $globalPatientCount + $localNewPatients;
-}
-$activePatients = calculateTotalPatients();
-
-// 2. PHP String Functions
-$rawUserName = "  dr. john doe  ";
-// String format manipulation
-$styledUserName = ucwords(strtolower(trim($rawUserName)));
-
-$rawSystemName = "smart_care_advanced_portal";
-$styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,13 +30,15 @@ $styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
         <div class="header">
             <div class="header-top">
                 <div class="header-left">
-                    <h1 class="fade-in"><?php echo $styledSystemName; ?> - Lab 5</h1>
+                    <h1 class="fade-in">Smart Care Advanced Portal - Lab 5</h1>
                     <p class="para slide-in" id="date"></p>
                 </div>
                 <div class="header-right">
-                    <div class="user-widget">
-                        <img src="https://via.placeholder.com/50" alt="User" class="user-avatar">
-                        <span class="user-name"><?php echo $styledUserName; ?></span>
+                    <div class="user-widget" style="display:flex; flex-direction:column; align-items:center;">
+                        <img src="https://via.placeholder.com/50" alt="User" class="user-avatar" style="border: 3px solid #4CAF50;">
+                        <span class="user-name">Dr. Google Mock 
+                        <br><span style="font-size:0.8rem; color:#1e3a8a;">OAuth User Logged In</span></span>
+                        <a href="dashboard.php?action=logout" style="font-size: 0.8rem; color: #d32f2f; text-decoration: none; margin-top: 5px;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +85,7 @@ $styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
                         <h3>👥 Patient Records</h3>
                     </div>
                     <p>View & manage patient details</p>
-                    <div class="card-stats" id="patientCount"><?php echo $activePatients; ?> Active Patients</div>
+                    <div class="card-stats" id="patientCount">188 Active Patients</div>
                     <p style="font-size: 0.8rem; margin-top: 5px; color: #fff;">*(Calculated via PHP global/local scope variables)</p>
                     <button class="btn-card" data-section="patients">More Details →</button>
                 </div>
@@ -182,11 +163,29 @@ $styledSystemName = ucwords(str_replace('_', ' ', $rawSystemName));
                 <div id="appointmentList"></div>
             </div>
 
-            <!-- Reports Section -->
+            <!-- Reports Section (Modified for Lab 6) -->
             <div class="content-section" id="reportsSection" style="display:none;">
-                <h3>📋 Medical Reports (JavaScript Enhanced)</h3>
-                <button id="generateReport">Generate Health Report</button>
-                <div id="reportOutput"></div>
+                <h3>📋 Medical Reports & Files (Lab 6)</h3>
+                
+                
+                <div class="appointment-form" style="margin-top:20px;">
+                    <h4>Upload New Medical Report</h4>
+                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="lab_report" required style="margin-bottom:10px;">
+                        <button type="submit" class="btn-card">Upload File</button>
+                    </form>
+                </div>
+
+                <div class="appointment-form" style="margin-top:20px;">
+                    <h4>Reference Data</h4>
+                    <p>Dummy data file for reference operations:</p>
+                    <a href="download.php" style="display:inline-block; margin-top:10px; padding:10px 15px; background:#3baea0; color:#fff; text-decoration:none; border-radius:5px;">Download dummy-data.txt</a>
+                </div>
+
+                <div style="margin-top:30px;">
+                    <button id="generateReport">Generate Health Report</button>
+                    <div id="reportOutput"></div>
+                </div>
             </div>
         </div>
 

@@ -1,25 +1,3 @@
-<?php
-session_start();
-require_once 'db.php';
-
-if (isset($_SESSION['secure_user'])) {
-    header("Location: dashboard.php");
-    exit;
-}
-
-$error = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = new MongoDBAuth();
-    $result = $db->authenticate($_POST['email'] ?? '', $_POST['password'] ?? '');
-    if ($result['success']) {
-        $_SESSION['secure_user'] = $result['user'];
-        header("Location: dashboard.php");
-        exit;
-    } else {
-        $error = $result['error'];
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,8 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-card">
         <h2 style="color: #1e3a8a; margin-bottom: 20px;">SmartCare Gateway</h2>
-        <?php if ($error) echo "<div class='error'>$error</div>"; ?>
-        <form method="POST">
+                <form method="POST">
             <input type="email" name="email" class="form-control" required placeholder="doctor@smartcare.com">
             <input type="password" name="password" class="form-control" required placeholder="password123">
             <button type="submit" class="btn">Secure Login</button>

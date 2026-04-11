@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartCare Advanced Dashboard - Lab2</title>
+    <title>SmartCare Advanced Dashboard - Lab3 (JavaScript Enhanced)</title>
     <link rel="stylesheet" href="smartcare.css">
 </head>
 <body>
@@ -16,11 +15,11 @@
             <p class="tagline">Healthcare Excellence</p>
         </div>
         <nav class="sidebar-nav">
-            <a href="#" class="nav-item active">🏠 HOME</a>
-            <a href="#" class="nav-item">👨‍⚕️ DOCTORS</a>
-            <a href="#" class="nav-item">📅 APPOINTMENTS</a>
-            <a href="#" class="nav-item">📊 ANALYSIS</a>
-            <a href="#" class="nav-item">⚙️ SETTINGS</a>
+            <a href="#" class="nav-item active" data-section="home">🏠 HOME</a>
+            <a href="#" class="nav-item" data-section="patients">👨‍⚕️ PATIENTS</a>
+            <a href="#" class="nav-item" data-section="appointments">📅 APPOINTMENTS</a>
+            <a href="#" class="nav-item" data-section="reports">📋 REPORTS</a>
+            <a href="#" class="nav-item" data-section="settings">⚙️ SETTINGS</a>
         </nav>
     </div>
 
@@ -31,13 +30,13 @@
         <div class="header">
             <div class="header-top">
                 <div class="header-left">
-                    <h1 class="fade-in">Smart Care Dashboard</h1>
+                    <h1 class="fade-in">Smart Care Advanced Portal - Lab 5</h1>
                     <p class="para slide-in" id="date"></p>
                 </div>
                 <div class="header-right">
                     <div class="user-widget">
                         <img src="https://via.placeholder.com/50" alt="User" class="user-avatar">
-                        <span class="user-name">Dr. John</span>
+                        <span class="user-name">Dr. John Doe</span>
                     </div>
                 </div>
             </div>
@@ -84,8 +83,9 @@
                         <h3>👥 Patient Records</h3>
                     </div>
                     <p>View & manage patient details</p>
-                    <div class="card-stats">450 Active Patients</div>
-                    <button class="btn-card">More Details →</button>
+                    <div class="card-stats" id="patientCount">162 Active Patients</div>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #fff;">*(Calculated via PHP global/local scope variables)</p>
+                    <button class="btn-card" data-section="patients">More Details →</button>
                 </div>
 
                 <div class="card card-gradient-2 hover-lift">
@@ -93,8 +93,8 @@
                         <h3>📅 Appointments</h3>
                     </div>
                     <p>Check upcoming schedules</p>
-                    <div class="card-stats">12 Scheduled</div>
-                    <button class="btn-card">More Details →</button>
+                    <div class="card-stats" id="appointmentCount">0 Scheduled</div>
+                    <button class="btn-card" data-section="appointments">More Details →</button>
                 </div>
 
                 <div class="card card-gradient-3 hover-lift">
@@ -103,7 +103,7 @@
                     </div>
                     <p>Monitor health statistics</p>
                     <div class="card-stats">95% Improvement</div>
-                    <button class="btn-card">More Details →</button>
+                    <button class="btn-card" data-section="reports">More Details →</button>
                 </div>
 
                 <div class="card card-gradient-4 hover-lift">
@@ -112,8 +112,60 @@
                     </div>
                     <p>Access diagnostic reports</p>
                     <div class="card-stats">156 Available</div>
-                    <button class="btn-card">More Details →</button>
+                    <button class="btn-card" data-section="reports">More Details →</button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Sections (JavaScript Enhanced) -->
+        <div id="dynamicContent">
+            <!-- Patient Management Section -->
+            <div class="content-section" id="patientsSection" style="display:none;">
+                <h3>👥 Patient Management (JavaScript Enhanced)</h3>
+                <div class="patient-form">
+                    <h4>Add New Patient</h4>
+                    <form id="patientForm">
+                        <input type="text" placeholder="Patient Name" name="name" required>
+                        <input type="number" placeholder="Age" name="age" required>
+                        <input type="tel" placeholder="Phone" name="phone" required>
+                        <select name="department" required>
+                            <option value="">Select Department</option>
+                            <option>Cardiology</option>
+                            <option>Neurology</option>
+                            <option>Dermatology</option>
+                        </select>
+                        <button type="submit">Add Patient</button>
+                    </form>
+                </div>
+                <div id="patientList"></div>
+            </div>
+
+            <!-- Appointments Section -->
+            <div class="content-section" id="appointmentsSection" style="display:none;">
+                <h3>📅 Appointments Management (JavaScript Enhanced)</h3>
+                <div class="appointment-form">
+                    <h4>Schedule New Appointment</h4>
+                    <form id="appointmentForm">
+                        <input type="text" placeholder="Patient Name" name="patientName" required>
+                        <input type="datetime-local" name="datetime" required>
+                        <select name="doctor" required>
+                            <option value="">Select Doctor</option>
+                            <option>Dr. Arjun Patel</option>
+                            <option>Dr. Neha Saxena</option>
+                            <option>Dr. Vikram Gupta</option>
+                        </select>
+                        <textarea name="notes" placeholder="Notes"></textarea>
+                        <button type="submit">Schedule Appointment</button>
+                    </form>
+                </div>
+                <div id="appointmentList"></div>
+            </div>
+
+            <!-- Reports Section -->
+            <div class="content-section" id="reportsSection" style="display:none;">
+                <h3>📋 Medical Reports (JavaScript Enhanced)</h3>
+                <button id="generateReport">Generate Health Report</button>
+                <div id="reportOutput"></div>
             </div>
         </div>
 
@@ -121,7 +173,7 @@
         <div class="table-section">
             <div class="section-header">
                 <h3>👥 Patient Appointments Schedule</h3>
-                <span class="badge">2 Patients Today</span>
+                <span class="badge" id="todayBadge">0 Patients Today</span>
             </div>
             <div class="table-responsive">
                 <table class="styled-table">
@@ -134,28 +186,8 @@
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="table-row-hover">
-                            <td><strong>Raghav Kumar</strong></td>
-                            <td>21</td>
-                            <td><span class="tag tag-cardiology">Cardiology</span></td>
-                            <td>+91 4557-6554-374</td>
-                            <td><span class="status confirmed">Confirmed</span></td>
-                        </tr>
-                        <tr class="table-row-hover">
-                            <td><strong>Ram Singh</strong></td>
-                            <td>28</td>
-                            <td><span class="tag tag-neurology">Neurology</span></td>
-                            <td>+91 4553-7456-5456</td>
-                            <td><span class="status pending">Pending</span></td>
-                        </tr>
-                        <tr class="table-row-hover">
-                            <td><strong>Priya Sharma</strong></td>
-                            <td>35</td>
-                            <td><span class="tag tag-dermatology">Dermatology</span></td>
-                            <td>+91 9876-5432-109</td>
-                            <td><span class="status confirmed">Confirmed</span></td>
-                        </tr>
+                    <tbody id="tableBody">
+                        <!-- Dynamic content will be added here -->
                     </tbody>
                 </table>
             </div>
@@ -168,12 +200,12 @@
                 <div class="stat-card">
                     <div class="stat-icon">👥</div>
                     <h4>Total Patients</h4>
-                    <p class="stat-value">450</p>
+                    <p class="stat-value" id="totalPatients">0</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📅</div>
                     <h4>Appointments</h4>
-                    <p class="stat-value">12</p>
+                    <p class="stat-value" id="totalAppointments">0</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📈</div>
@@ -191,6 +223,7 @@
         <!-- Enhanced Footer -->
         <footer class="footer">
             <p>&copy; 2025 SmartCare Healthcare System. All rights reserved | Privacy Policy | Terms of Service</p>
+            <p><strong>Lab3 Features:</strong> JavaScript Form Validation, Local Storage, Dynamic Content Updates, Real-time Statistics</p>
         </footer>
 
     </div>
